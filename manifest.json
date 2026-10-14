@@ -2,8 +2,31 @@
   "name": "Tia Gaby Estações - Radar de Eventos IA",
   "short_name": "Tia Gaby",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#0b1020",
   "theme_color": "#111827",
-  "description": "Radar de oportunidades e CRM para Tia Gaby Estações"
+  "description": "Radar de oportunidades e CRM para Tia Gaby Estações",
+  "share_target": {
+    "action": "./capturar.html",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "shortcuts": [
+    {
+      "name": "Enviar ao Radar",
+      "short_name": "Enviar ao Radar",
+      "url": "./capturar.html"
+    },
+    {
+      "name": "Abrir Radar",
+      "short_name": "Radar",
+      "url": "./radar.html"
+    }
+  ]
 }
