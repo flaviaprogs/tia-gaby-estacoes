@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Tia Gaby Estações - Radar Facebook",
+  "version": "0.1.0",
+  "description": "Coletor de oportunidades em grupos do Facebook autorizados pela usuária.",
+  "permissions": ["alarms", "storage", "tabs", "notifications"],
+  "host_permissions": [
+    "https://www.facebook.com/*",
+    "https://facebook.com/*",
+    "https://flaviaprogs.github.io/tia-gaby-estacoes/*"
+  ],
+  "background": {"service_worker": "background.js"},
+  "options_page": "options.html",
+  "action": {"default_title": "Tia Gaby Radar"},
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/groups/*", "https://facebook.com/groups/*"],
+      "js": ["facebook.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://flaviaprogs.github.io/tia-gaby-estacoes/*"],
+      "js": ["dashboard.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
